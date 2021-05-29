@@ -20,7 +20,7 @@ command_prefix: 指令前綴
 owner_ids: 擁有者ID
 """
 bot = commands.Bot(command_prefix= jdata['Prefix'], 
-										 owner_ids= jdata['Owner_id'])
+	owner_ids= jdata['Owner_id'])
 
 # Bot完成啟動後事件
 @bot.event
