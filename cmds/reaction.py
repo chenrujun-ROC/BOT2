@@ -10,17 +10,14 @@ with open('setting.json', 'r', encoding='utf8') as jfile:
 
 class Reaction(Cog_Extension):
     @commands.Cog.listener()
-    async def on_raw_reaction_add(self,payload):
-        if payload.emoji == jdata['emoji1']:
-            guild = self.bot.get_guild(payload.giuild_id)
-            role = guild.get_role(['new role'])
-            payload.member.add_roles(role)
+    async def on_raw_reaction_add(self,payload):                    
+        if str(payload.emoji) == jdata['emoji_club']:              
+            guild = self.bot.get_guild(payload.giuild_id)            #取得當前所在伺服器          
+            role = guild.get_role(['new role'])                      #取得伺服器內指定身分組
+            await payload.member.add_roles(role)                           #給予該成員身分組
            
-        #2.判斷反應貼圖
-        #3.給予身分組
-        print(payload.emoji)
-        print(payload.user)
-
+        
+        
 
 def setup(bot):
   bot.add_cog(Reaction(bot))
