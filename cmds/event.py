@@ -8,7 +8,6 @@ with open('setting.json', 'r', encoding='utf8') as jfile:
    jdata = json.load(jfile)
 
 class Event(Cog_Extension):
-
   @commands.Cog.listener()
   async def on_command_error(self, ctx, error):
     '''指令錯誤觸發事件'''
