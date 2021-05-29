@@ -11,15 +11,15 @@ with open('setting.json', 'r', encoding='utf8') as jfile:
 class Reaction(Cog_Extension):
     @commands.Cog.listener()
     async def on_raw_reaction_add(self,payload): 
-      if payload.message_id== jdata['messageID']:                    #使用者新增反映的訊息
-        if str(payload.emoji) == jdata['emoji_club']:                #判斷emoji
+      if payload.message_id == 848194547522994186:              #使用者新增反映的限定訊息
+        if str(payload.emoji) == 12010678_616494798493201_7164551:   #判斷emoji
             guild = self.bot.get_guild(payload.giuild_id)            #取得當前所在伺服器          
-            role = guild.get_role(['new role'])                      #取得伺服器內指定身分組
+            role = guild.get_role(['test_role'])                      #取得伺服器內指定身分組
             await payload.member.add_roles(role)                     #給予該成員身分組
             await payload.member.send(f'你取得了 {role} 身分組')
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self,payload):                    
-        if str(payload.emoji) == jdata['emoji_club']:              
+        if str(payload.emoji) == jdata['emoji_club']:                #判斷emoji
             guild = self.bot.get_guild(payload.giuild_id)            #取得當前所在伺服器
             user = guild.get_member(payload.user_id)                 #設定user變數
             role = guild.get_role(['new role'])                      #取得伺服器內指定身分組
