@@ -46,15 +46,15 @@ class Main(Cog_Extension):
 
 	@commands.command()
 	async def info(self, ctx):
-		embed = discord.Embed(title="About P_Base-Bot", description="Made Bot Easier !", color=0x28ddb0)
+		embed = discord.Embed(title="奴工的個人資訊", description="NTUCYCBOT!", color=0x00ffff)
 		# embed.set_thumbnail(url="#")
-		embed.add_field(name="開發者 Developers", value="Proladon#7525 (<@!149772971555160064>)", inline=False)
-		embed.add_field(name="源碼 Source", value="[Link](https://github.com/Proladon/Proladon-DC_BaseBot)", inline=True)
-		embed.add_field(name="協助 Support Server", value="[Link](https://discord.gg/R75DXHH)" , inline=True)
+		embed.add_field(name="開發者 Developers", value="儒用#6595 (<@![Owner_id]>)", inline=False)
+		embed.add_field(name="社團粉絲專頁", value="[Link](https://www.facebook.com/ntucyc)", inline=False)
+		embed.add_field(name="社團", value="[Link](https://www.facebook.com/groups/NTUCYCLUB)" , inline=False)
 		embed.add_field(name="版本 Version", value="0.1.0 a", inline=False)
 		embed.add_field(name="Powered by", value="discord.py v{}".format(discord.__version__), inline=True)
 		embed.add_field(name="Prefix", value=jdata['Prefix'], inline=False)
-		embed.set_footer(text="Made with ❤")
+		embed.set_footer(text="Made with 儒用❤")
 		await ctx.send(embed=embed)
 
 
