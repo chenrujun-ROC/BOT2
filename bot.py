@@ -25,7 +25,7 @@ bot = commands.Bot(command_prefix= jdata['Prefix'],
 # Bot完成啟動後事件
 @bot.event
 async def on_ready():
-	print(">>>奴工上線啦< <<")
+	print(">>>奴工上線啦<<<")
 
 # 載入cmds資料夾內所有cog
 for filename in os.listdir('./cmds'):
