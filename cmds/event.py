@@ -19,6 +19,6 @@ class Event(Cog_Extension):
       return
     else:  # 使用 Default Error Handler
       await Errors.default_error(self, ctx, error)
-
+  
 def setup(bot):
   bot.add_cog(Event(bot))
