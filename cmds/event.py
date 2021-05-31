@@ -19,6 +19,15 @@ class Event(Cog_Extension):
       return
     else:  # 使用 Default Error Handler
       await Errors.default_error(self, ctx, error)
-  
+
+  @commands.Cog.listener()
+  async def on_member_join(self, member):
+	  channel = self.bot.get_channel(int(jdata['welcome_channel']))
+	  await channel.send(f'{member}入侵!(´⊙ω⊙`)')
+  @commands.Cog.listener()
+  async def on_member_remove(self, member):
+	  channel = self.bot.get_channel(int(jdata['leave_channel']))
+	  await channel.send(f'{member}離開!(´⊙ω⊙`)')
+
 def setup(bot):
   bot.add_cog(Event(bot))
