@@ -3,6 +3,8 @@ from discord.ext import commands
 from core.classes import Cog_Extension
 from core import check
 import json
+import time
+import datetime
 import os, random
 
 with open('setting.json', 'r', encoding='utf8') as jfile:
@@ -43,7 +45,6 @@ class Main(Cog_Extension):
 			return
 		else: await ctx.message.delete()
 		await ctx.send(content)
-
 
 	@commands.command()
 	async def info(self, ctx):
