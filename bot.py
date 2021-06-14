@@ -11,6 +11,7 @@ https://discordpy.readthedocs.io/en/latest/intents.html#intents-primer
 # 啟用所有 intents
 intents = discord.Intents.all()
 
+
 # 讀取設定檔 load settings
 with open('setting.json', 'r', encoding= 'utf8') as jfile:
 	jdata = json.load(jfile)
@@ -20,7 +21,8 @@ command_prefix: 指令前綴
 owner_ids: 擁有者ID
 """
 bot = commands.Bot(command_prefix= jdata['Prefix'], 
-	owner_ids= jdata['Owner_id'])
+	owner_ids= jdata['Owner_id'],
+	intents = intents)
 
 # Bot完成啟動後事件
 @bot.event
